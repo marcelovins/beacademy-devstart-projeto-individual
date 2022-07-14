@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\{
+    PostController,
     UserController,
     ViaCepController
 };
@@ -30,6 +31,9 @@ Route::get('/', function () {
 // });
 
 // php artisan make:controller NomeDoController  (para criar controllers)
+
+Route::get('/posts', [PostController::class, 'index'])->name('posts.index');
+Route::get('users/{id}/posts', [PostController::class, 'show'])->name('posts.show');
 
 Route::delete('/users/{id}', [UserController::class, 'destroy'])->name('users.destroy');
 Route::put('/users/{id}', [UserController::class, 'update'])->name('users.update');

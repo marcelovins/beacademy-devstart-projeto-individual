@@ -2,13 +2,28 @@
 @section('title', 'Usuários')
 @section('body')
     <h1 class= "">Usuários</h1>
-    <a href="{{route('users.create')}}" class= "btn btn-secondary">Novo Usuário</a>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm mt-2 mb-5">
+                <a href="{{route('users.create')}}" class= "btn btn-secondary">Novo Usuário</a>
+            </div>
+            <div class="col-sm mt-2 mb-5">
+                <form action="{{ route('users.index') }}" method="GET">
+                    <div class="input-group">
+                        <input type="search" name="search" id="" class="form-control rounded" placeholder="Pesquisar" ariadescribedby="search-addon">
+                        <button type="submit" class="btn btn-outline-primary">Pesquisar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
     <table class="table container" >
         <thead class="table-light">
             <tr>
                 <th scope="col">ID</th>
                 <th scope="col">Nome</th>
                 <th scope="col">e-mail</th>
+                <th scope="col">Postagens</th>
                 <th scope="col">Data Cadastro</th>
                 <th scope="col">Ações</th>
             </tr>
@@ -23,6 +38,9 @@
                     @endif
                     <td>{{$user->name}}</td>
                     <td>{{$user->email}}</td>
+                    <td>
+                    <a href="{{route('posts.show', $user->id)}}" class="btn btn-outline-dark">Postagens</a>
+                    </td>
                     <td>{{date('d/m/Y', strtotime($user->created_at))}}</td>
                     <td><a href="{{route('users.show', $user->id)}}" class="btn btn-info text-white">Visualizar</a></td>
                 </tr>
@@ -39,3 +57,15 @@
 
 <!-- criar model e migration -->
 <!-- php artisan make:model NomeDaMigration -m -->
+
+<!-- criar model e migration -->
+<!-- php artisan make:model NomeDaMigration -m -->
+
+<!-- criar o seeder  -->
+<!-- php artisan make:seeder NomeSeeder -->
+
+<!-- cria o factory -->
+<!-- php artisan make:factory NameFactory -->
+
+<!-- implementa dados fake no banco -->
+<!-- php artisan db:seed NameSeeder-->
