@@ -1,0 +1,8 @@
+.mybackground {
+    background: url('../../public/storage/profile/man_using.jpg');
+    color: azure;
+    max-width: 100px;
+    background-size: 50px;
+    width: 300px;
+    height: 100px;
+}

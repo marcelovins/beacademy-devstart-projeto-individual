@@ -11,13 +11,13 @@
 <body>
     <ul class="nav justify-content-center">
         <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="/users">Usuários</a>
+            <a class="nav-link active" aria-current="page" href="/users">Clientes</a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="/posts">Posts</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
+            <a class="nav-link" href="/exit">Sair</a>
         </li>
         <li class="nav-item">
             <a class="nav-link disabled">Disabled</a>

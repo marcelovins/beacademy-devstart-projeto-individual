@@ -8,6 +8,11 @@ use App\Models\User;
 
 class PostController extends Controller
 {
+    // public function __construct() 
+    // {
+    //     $this->middleware('log.access');
+    // }
+
     protected $user;
     protected $post;
 

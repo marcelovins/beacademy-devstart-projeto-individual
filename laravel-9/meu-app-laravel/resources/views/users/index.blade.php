@@ -1,11 +1,11 @@
 @extends('template.users')
-@section('title', 'Usuários')
+@section('title', 'Clientes')
 @section('body')
-    <h1 class= "">Usuários</h1>
+    <h1 class= "">Cadastro de Clientes</h1>
     <div class="container">
         <div class="row">
             <div class="col-sm mt-2 mb-5">
-                <a href="{{route('users.create')}}" class= "btn btn-secondary">Novo Usuário</a>
+                <a href="{{route('users.create')}}" class= "btn btn-secondary">Novo Cliente</a>
             </div>
             <div class="col-sm mt-2 mb-5">
                 <form action="{{ route('users.index') }}" method="GET">
@@ -34,7 +34,7 @@
                     @if($user->image)
                         <th><img src="{{ asset('storage/' .$user->image) }}" width="50px" height="50px" class="rounded-circle"></th>
                     @else
-                    <th><img src="{{ asset('storage/profile/avatar.png') }}" width="50px" height="50px" class="rounded-circle"></th>
+                    <th><img src="{{ asset('images/avatar.png') }}" width="50px" height="50px" class="rounded-circle"></th>
                     @endif
                     <td>{{$user->name}}</td>
                     <td>{{$user->email}}</td>

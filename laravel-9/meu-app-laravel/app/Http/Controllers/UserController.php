@@ -8,6 +8,14 @@ use App\Http\Requests\StoreUpdateUserFormRequest;
 
 class UserController extends Controller
 {
+
+    // usando o kernel é possível apelidar a rota do middleware
+
+    // public function __construct() 
+    // {
+    //     $this->middleware('log.access');
+    // }
+
     public function __construct(User $user)
     {
         $this->model = $user;
@@ -69,7 +77,8 @@ class UserController extends Controller
     //    $user->save(); //maneira 1 de fazer chamada de dados para o banco;
 
     $data = $request->all();
-    $data['password'] = bcrypt($request->password);
+    $data['password'] = $request->password;
+    // bcrypt($request->password);
 
     if($request->image){
         $file = $request['image'];
@@ -102,7 +111,8 @@ class UserController extends Controller
         
         $data = $request->only('name', 'email');
         if($request->password)
-        $data['password'] = bcrypt($request->password);
+        $data['password'] = $request->password;
+        // bcrypt($request->password);
 
         $user->update($data);
 
